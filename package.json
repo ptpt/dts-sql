@@ -1,0 +1,21 @@
+{
+  "name": "dts-sql",
+  "version": "1.0.0",
+  "description": "generate TypeScript definition from SQL schema",
+  "main": "index.js",
+  "dependencies": {
+    "pg": "^7.4.3",
+    "squel": "^5.12.2"
+  },
+  "devDependencies": {
+    "@types/pg": "^7.4.10"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "dts-sql": "./index.js"
+  },
+  "author": "Tao Peng",
+  "license": "MIT"
+}
