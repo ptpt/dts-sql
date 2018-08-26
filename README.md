@@ -17,33 +17,33 @@ INTERFACE_NAME: Interface name of the definition
 ## Example
 
 Assume we have had [the sample tables](https://github.com/vrajmohan/pgsql-sample-data/blob/master/employee/employees.sql) loaded the database. We want to generate the definition for the `employees` table:
-```
+```shell
 dts-sql postgresql://postgres:secret@localhost:5432/postgres public employees IEmployee
 ```
 
 will print out:
-```
+```typescript
 export interface IEmployee {
 
     // integer
-    emp_no: number;
+    'emp_no': number;
 
     // date
-    birth_date: Date;
+    'birth_date': Date;
 
     // character varying
-    first_name: string;
+    'first_name': string;
 
     // character varying
-    last_name: string;
+    'last_name': string;
 
     // gender
-    gender: any | null;
+    'gender': any | null;
 
     // date
-    hire_date: Date;
+    'hire_date': Date;
 }
 ```
 
 ## License
-MIT
+MIT. See License file.
