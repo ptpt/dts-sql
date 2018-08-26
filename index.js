@@ -109,11 +109,12 @@ const main = () => __awaiter(this, void 0, void 0, function* () {
     const q = s.toParam();
     const result = yield pool.query(q.text, q.values);
     const defs = result.rows.map(row => {
-        const { column_name, type, is_nullable } = row;
+        const { column_name, type: sqlType, is_nullable } = row;
         const nullable = is_nullable === 'YES' ? ' | null' : '';
+        const tsType = getTSType(sqlType);
         return `
-    // ${type}
-    ${column_name}: ${getTSType(type)}${nullable};`;
+    // ${sqlType}
+    '${column_name}': ${tsType}${nullable};`;
     });
     console.log(`export interface ${interfaceName} {\n${defs.join('\n')}\n}`);
     return 0;
