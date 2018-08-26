@@ -71,13 +71,6 @@ const getTSType = (sqlType: string): string => {
     }
 }
 
-interface Hello {
-    interface: boolean;
-    class: boolean;
-    number: number;
-    'hello world': number;
-}
-
 const main = async (): Promise<number> => {
     if (process.argv.length < 6) {
         console.error(help_message);
